@@ -12,7 +12,7 @@ const createCourses = () =>{
       <h3>Browxy Course</h3>
       <ul>
       <li>Edit Course</li>
-      <li>Edit tasks</li>
+      <li>Create Tasks</li>
       </ul>
      
     </div>

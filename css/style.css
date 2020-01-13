@@ -78,6 +78,7 @@ header nav ul li:hover {
 .side-info ul li {
   padding: 5px;
   text-decoration: underline;
+  list-style: none;
   cursor: pointer;
 }
 .side-info ul li:hover {
@@ -124,7 +125,7 @@ header nav ul li:hover {
 }
 
 .course-form form textarea{
-  width: 99%;
+  width: 96%;
 }
 .course-form form button{
   background:#c9e6ff;
