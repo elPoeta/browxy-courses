@@ -44,6 +44,7 @@ header nav ul li:hover {
 
 .brand{
   text-align: center;
+  margin-bottom: 5px;
 }
 
 .brand span{
@@ -59,7 +60,10 @@ header nav ul li:hover {
 .wrapper-form > *{
   padding: 2em;
 }
-
+.wrapper-form h3 {
+  color:#989797;
+  margin-bottom: 5px;
+}
 .side-info{
   background:#c9e6ff;
 }
@@ -140,3 +144,30 @@ header nav ul li:hover {
   transition: background-color 2s ease-out;
 }
 
+@media (max-width: 700px){
+  /*forms*/
+  .wrapper-form{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .course-form form {
+    grid-template-columns: 1fr;
+    grid-gap:5px;
+  }
+  .course-form form .full{
+    grid-column: 1 / 2;
+  }
+  .wrapper-form > *{
+    padding: 1em;
+  } 
+  .course-form form textarea {
+    width: 90%;
+  }
+  .side-info h3, .brand{
+    text-align: center;
+  }
+  .course-form form .register-radio {
+    margin: 0 55px;
+  } 
+}
