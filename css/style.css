@@ -33,7 +33,22 @@ header nav ul li:hover {
    background-color: #fff;
    color: #09236b;
 } 
-
+/*STATUS LED */
+.status {
+  display: inline-block;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin: 1px;
+ }
+ .status-active {
+  background-color: #80FF00;
+  box-shadow: inset #333 0 -1px 4px 1px; 
+ }
+ .status-deactive {
+  background-color: red;
+  box-shadow: inset #333 0 -1px 4px 1px; 
+ }
 /*FORMS*/
 .container-form{
   max-width:1170px;
@@ -144,6 +159,73 @@ header nav ul li:hover {
   cursor: pointer;
   transition: background-color 2s ease-out;
 }
+
+/*TEACHE COURSE TABLE*/
+.teacher-course-header {
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+}
+.teacher-course-cell {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 2fr repeat(3,.5fr) 1fr .5fr;
+  grid-gap: 2px;
+  font-size: 1em;
+  
+  text-align: center;
+}
+.teacher-course-header li,
+.teacher-course-row li{
+  list-style: none;
+  padding: 10px;
+}
+.teacher-course-row li {
+  padding: 2px;
+  border-bottom: 1px solid #ccc;
+}
+
+.action-course-edit {
+  color: green;
+
+}
+.action-course-delete {
+  color: red;
+}
+.action-course {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.notification-read {
+  color: #ccc;
+  cursor: pointer;
+}
+.notification-unread {
+  color: green;
+  animation: shake 2s cubic-bezier(.36,.07,.19,.97) both infinite;
+  transform: translate3d(0, 0, 0);
+  cursor: pointer;
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/*MEDIA QUERIES*/
 
 @media (max-width: 700px){
   /*forms*/
