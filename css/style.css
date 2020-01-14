@@ -161,19 +161,49 @@ header nav ul li:hover {
 }
 
 /*TEACHE COURSE TABLE*/
+.header-courses{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-newCourse {
+  padding: 8px;
+  margin: 8px;
+  border: 1px solid green;
+  background: none;
+  font-weight: bold;
+  color: green;
+  cursor: pointer;
+  transition: background-color 2s ease-out;
+}
+.btn-newCourse:hover{
+  background: green;
+  color: #fff;
+}
 .teacher-course-header {
   background-color: #333;
   color: #fff;
   font-weight: bold;
 }
+.cut-text{
+  display: block;
+  max-width: 56px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
 .teacher-course-cell {
   list-style: none;
   display: grid;
-  grid-template-columns: 2fr repeat(3,.5fr) 1fr .5fr;
+  grid-template-columns: repeat(2, 1fr) repeat(2, 80px) .5fr 80px 1fr;
   grid-gap: 2px;
   font-size: 1em;
-  
   text-align: center;
+}
+.link-to-status:hover {
+  cursor: pointer;
+  color: #1ab13b;
+  text-decoration: underline;
 }
 .teacher-course-header li,
 .teacher-course-row li{
@@ -224,7 +254,28 @@ header nav ul li:hover {
     transform: translate3d(4px, 0, 0);
   }
 }
-
+.status-course-cell {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 2fr .5fr 1fr;
+  grid-gap: 2px;
+  font-size: 1em;
+  text-align: center;
+  align-items: center;
+}
+.status-task {
+  display: grid;
+}
+.status-task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+ 
+}
+.status-task-list li{
+  border-bottom: none;
+}
 /*MEDIA QUERIES*/
 
 @media (max-width: 700px){

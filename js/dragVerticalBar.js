@@ -63,8 +63,16 @@ $(document).mouseup(function(e) {
     $('#rightNavigation').css("width", currentWidth - 6);
     if(currentWidth > 600) {
       $('#nav-bar').css("width", (currentWidth) + "px");
+      if(document.querySelector('.teacher-course-header')) {
+        document.querySelectorAll('.teacher-course-header li')
+        .forEach(el=> el.classList.remove('cut-text'))
+      }
     } else {
       $('#nav-bar').css("width", "inherit");
+      if(document.querySelector('.teacher-course-header')) {
+        document.querySelectorAll('.teacher-course-header li')
+        .forEach(el=> el.classList.add('cut-text'))
+      }
     }
     $('#bxy_compiler').css("right", currentWidth);
     $('#ghostbar').remove();
