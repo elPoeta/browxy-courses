@@ -195,7 +195,7 @@ const studentStatusForCourse = () =>{
 
   const template =
   `<section class="student-status-courses">
-    <h2>Students Status For Course</h2>
+    <h2>Course: ITFS 16 Dialog Logica 2020A</h2>
   <ul>
    <li> 
      <ul class="teacher-course-cell teacher-course-header">
@@ -228,7 +228,7 @@ const studentStatusForCourse = () =>{
         </ul>
        </li>
        <li>8</li>
-       <li><span class="action-course action-course-edit" onclick="">Edit</span> - <span class="action-course action-course-edit">tasks</span> -  <span class="action-course action-course-delete">Delete</span></li>      
+       <li><span class="action-course action-course-edit" >Edit</span> - <span class="action-course action-course-edit" onclick="studentTaskDetail();">tasks</span> -  <span class="action-course action-course-delete">Delete</span></li>      
        </ul>
       </li>
      </ul>  
@@ -241,3 +241,39 @@ const studentStatusForCourse = () =>{
   }
 }
 
+const studentTaskDetail = () =>{
+  document.documentElement.style.setProperty("--colNum", 6);
+  const template =
+  `<h2>Course: ITFS 16 Dialog Logica 2020A</h2>
+  <h2>Student: Fulano de Tal</h2>
+   <section class="teacher-courses">
+    <ul>
+     <li> 
+       <ul class="teacher-course-cell teacher-course-header">
+       <li class="cut-text">Unit Id</li>
+       <li class="cut-text">Task Id</li>
+       <li class="cut-text">Task Name</li>
+       <li class="cut-text">Last Status</li>
+       <li class="cut-text">Last Grade</li>
+       <li class="cut-text">Actions</li>    
+       </ul>
+     </li> 
+     <li> 
+       <ul class="teacher-course-cell teacher-course-row">
+       <li>1</li>
+       <li>1</li>
+       <li>hello World</li>
+       <li>Finished</li>
+       <li>8</li>
+       <li><span class="action-course action-course-edit" onclick="">View Sumissions</span></li>      
+       </ul>
+     </li> 
+    </ul>
+   </section>
+  `;
+  rightNavigation.innerHTML = template;
+  if(rightNavigation.offsetWidth > 600) {
+    document.querySelectorAll('.teacher-course-header li')
+    .forEach(el=> el.classList.remove('cut-text'))
+  }
+}
