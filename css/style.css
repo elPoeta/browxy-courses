@@ -1,3 +1,11 @@
+:root {
+  --rowNum: 4;
+  --colNum: 5;
+  --colTask: 1;
+  --gridHeight: 120px;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -195,15 +203,20 @@ header nav ul li:hover {
 .teacher-course-cell {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr) repeat(2, 80px) .5fr 80px 1fr;
-  grid-gap: 2px;
+  /*grid-template-rows: repeat(var(--rowNum), var(--gridHeight));*/
+  grid-template-columns: repeat(var(--colNum), 1fr);
+  gap: 2px;
   font-size: 1em;
   text-align: center;
 }
+
 .link-to-status:hover {
   cursor: pointer;
   color: #1ab13b;
   text-decoration: underline;
+}
+.teacher-course-header {
+  align-items: center;
 }
 .teacher-course-header li,
 .teacher-course-row li{
@@ -254,22 +267,14 @@ header nav ul li:hover {
     transform: translate3d(4px, 0, 0);
   }
 }
-.status-course-cell {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 2fr .5fr 1fr;
-  grid-gap: 2px;
-  font-size: 1em;
-  text-align: center;
-  align-items: center;
-}
+
 .status-task {
   display: grid;
 }
 .status-task-list {
   list-style: none;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(var(--colTask), 1fr);
   justify-content: center;
  
 }

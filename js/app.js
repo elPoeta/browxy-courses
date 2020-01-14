@@ -3,8 +3,8 @@ const rightNavigation = document.querySelector('#rightNavigation');
 
 const courses = [
   {institution: undefined, name: undefined, year: undefined, division:undefined},
-  {institution:"ITFS 16",name:"ITFS 16 Dialog logica 2020A",year:2020,division:"A"},
-  {institution:"ITFS 16",name:"ITFS 16 Data Base 2020A",year:2020,division:"A"}
+  {institution:"ITFS 16",name:"ITFS 16 Dialog logica 2020A",year:2020,division:"A", status: true},
+  {institution:"ITFS 16",name:"ITFS 16 Data Base 2020A",year:2020,division:"A",status: false}
 ]; 
 const home = () =>{
   rightNavigation.innerHTML = '<h2>Home - CLICK USER AREA LINK</h2>';
@@ -32,7 +32,7 @@ const userArea = ()=> {
   rightNavigation.innerHTML = template;
  }
 const createEditCourse = (id) =>{
-    const {institution,name,year,division} = courses[id];
+    const {institution,name,year,division, status} = courses[id];
   
   const template =
   `<section class="container-form">
@@ -65,6 +65,10 @@ const createEditCourse = (id) =>{
           <label>Division</label>
           <input type="text" name="division" value="${division || ''}">
         </p>
+        <p>
+        <label>Active Course</label>
+        <input type="checkbox" name="status" ${status ? 'checked' : 'unchecked'}>
+      </p>
         <p class="full">
           <label>Description</label>
           <textarea name="description" rows="5"></textarea>
@@ -81,6 +85,7 @@ const createEditCourse = (id) =>{
 }
 
 const teacherListCourses = () =>{
+  document.documentElement.style.setProperty("--colNum", 7);
   const template =
   `
   <div class="header-courses">
@@ -127,6 +132,10 @@ const teacherListCourses = () =>{
    </section>
   `;
   rightNavigation.innerHTML = template;
+  if(rightNavigation.offsetWidth > 600) {
+    document.querySelectorAll('.teacher-course-header li')
+    .forEach(el=> el.classList.remove('cut-text'))
+  }
 }
 const createEditTask = () => {
   const template =
@@ -181,12 +190,15 @@ const editTask = () => {
 }
 
 const studentStatusForCourse = () =>{
+  document.documentElement.style.setProperty("--colNum", 4); 
+  document.documentElement.style.setProperty("--colTask", 5);
+
   const template =
   `<section class="student-status-courses">
     <h2>Students Status For Course</h2>
   <ul>
    <li> 
-     <ul class="status-course-cell teacher-course-header">
+     <ul class="teacher-course-cell teacher-course-header">
      <li class="cut-text">Student Name</li>
      <li class="status-task">
        <span>Tasks</span>
@@ -203,16 +215,16 @@ const studentStatusForCourse = () =>{
      </ul>
    </li> 
    <li> 
-       <ul class="status-course-cell teacher-course-row">
+       <ul class="teacher-course-cell teacher-course-row">
        <li>Fulano de Tal</li>
        <li class="status-task">
        
         <ul class="status-task-list">
-        <li class="cut-text">7</li>
-        <li class="cut-text">8</li>
-        <li class="cut-text">3</li>
-        <li class="cut-text">6</li>
-        <li class="cut-text">10</li>
+        <li class="cut-text" style="color: green;">7</li>
+        <li class="cut-text" style="color: green;">8</li>
+        <li class="cut-text" style="color: red;">3</li>
+        <li class="cut-text" style="color: red;">6</li>
+        <li class="cut-text" style="color: green;">10</li>
         </ul>
        </li>
        <li>8</li>
@@ -223,5 +235,9 @@ const studentStatusForCourse = () =>{
       </section> `;
 
   rightNavigation.innerHTML = template;
+  if(rightNavigation.offsetWidth > 600) {
+    document.querySelectorAll('.teacher-course-header li')
+    .forEach(el=> el.classList.remove('cut-text'))
+  }
 }
 
