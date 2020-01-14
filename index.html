@@ -4,23 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/complete.css"><link>
+  <link rel="stylesheet" href="./css/mediaQuery.css"><link>
   <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/jquery-1.11.3/jquery-1.11.3.min.js" defer ></script>
+  <script src="./js/dragVerticalBar.js" defer ></script>
   <script src="./js/app.js" defer></script>
   <title>Browxy Courses</title>
 </head>
 <body>
-  <header>
-    <h1>Browxy Courses</h1>
-  <nav>
-    <ul>
-      <li onclick="home();">Home</li>
-      <li onclick="createEditCourse(0);">Create Course</li>
-    </ul>
-  </nav>
-  
-  </header>
-  <main id="root">
-    <h2>Home</h2>
-  </main>
+  <div id="browxySite" class="bxy_site">
+    <header class="bxy_site__header">
+      <h1 class="bxy_text-logo">Browxy</h1>
+      <nav class="bxy_navigation-links" id="nav-bar">
+        <ul>
+          <li class="header-menu-item"><a id="homeLink" href="#" onclick="home();"class="bxy_navigation-links__item menu-item-active">Home</a></li>
+          <li class="header-menu-item"><a id="fileTree" href="#" class="bxy_navigation-links__item ">FileTree</a></li>
+          <li class="header-menu-item"><a id="forumLink" href="#" class="bxy_navigation-links__item">Forum</a></li>
+          <li class="header-menu-item"><a id="publishedCodeLink" href="#"  class="bxy_navigation-links__item">BrowxyApps</a></li>
+          <li class="header-menu-item"><a id="signInLink" href="#" onclick="userArea();" class="bxy_navigation-links__item">UserArea</a></li>
+          <li class="header-menu-item"><a id="registerLink" href="#" class="bxy_navigation-links__item">Register</a></li>
+          <li class="header-menu-item"><a id="termsLink" href="#" class="bxy_navigation-links__item">Terms</a></li>
+          <li class="header-menu-item"><a id="helpLink" href="#" class="bxy_navigation-links__item">Help</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="bxy_site_body" class="bxy_site__body">
+      <div id="bxy_compiler" class="bxy_compiler">
+        <div id="bxy_compiler__top_container">
+          <div id="bxy_compiler__top">
+            <div class="bxy_compiler__header">
+              <label for="exampleCombo" class="labelSelect">`</label><select id="exampleCombo" class="bxy_dropdown" name="exampleCombo"></select>
+              <label><input id="tryExampleButton" name="tryExampleButton" class="bxy_button bxy_button--blue" type="button" value="Open Example" ></label>
+              <label for="args" class="bxy_text-label--white ">Arguments</label>
+              <label><input id="args" name="args" type="text" value="" class="bxy_textfield--small">
+              <label><input id="startButton" name="startButton" type="button" class="bxy_button bxy_button--green" value="Start" ></label>
+              <label><input id="stopButton" name="stopButton" type="button" class="bxy_button bxy_button--red" value="Stop"></label>
+              <label><input id="status" name="status" class="bxy_run-status" type="text" value="Not Running" readonly="readonly"></label>
+              <i id="moreOptions">
+                <svg class="icon-svg icon-dots" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M10 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0-6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path>
+                </svg>
+              </i>
+            </div>
+            <div id="bxy_compiler__editor-container" class="bxy_compiler__editor-container">
+              <div id="compilerNew">
+                <ul></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div id="horizontalDragBar" class="bxy_horizontalDragBar"></div>
+        <div id="compilerConsole" class="bxy_compiler__console">
+          <div class="bxy_compiler__console-tabs">
+            <div id="outputTabber" class="tabber editorConsoleTabber">
+              <div id="consoleBox" class="tabbertab" title="Console View">
+                <label for="chatlog" class="labelSelect">'</label><textarea id="chatlog" class="bxy_console" rows=13 name="result" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+              </div>
+            </div>   
+          </div>   
+        </div>
+      </div>
+      <div id="verticalDragBar" class="bxy_verticalDragBar"></div>
+      <div id="rightNavigation" class="bxy_sidecontent"><h2>HOME PAGE</h2></div>
+    </div>
+  </div>
+ 
 </body>
 </html>

@@ -1,12 +1,35 @@
-const root = document.querySelector('#root');
+//const root = document.querySelector('#root');
+const rightNavigation = document.querySelector('#rightNavigation');
+
 const courses = [
   {institution: undefined, name: undefined, year: undefined, division:undefined},
   {institution:"ITFS 16",name:"ITFS 16 Dialog logica 2020A",year:2020,division:"A"},
   {institution:"ITFS 16",name:"ITFS 16 Data Base 2020A",year:2020,division:"A"}
 ]; 
 const home = () =>{
-  root.innerHTML = '<h2>Home</h2>';
+  rightNavigation.innerHTML = '<h2>Home</h2>';
 }
+
+const userArea = ()=> {
+  const template =
+  `<section style='text-align:center;' class='userLinks'>
+     <div style='padding:20px;'>
+       <h3>TEACHER LINKS</h3>
+       <ul style='list-style:none; padding:2px;'>
+         <li><a href="#" onclick="createEditCourse(0);">Create course</a></li>
+       </ul>
+     </div>
+
+     <div style='padding:20px;'>
+     <h3>STUDENT LINKS</h3>
+     <ul style='list-style:none; padding:2px;'>
+       <li><a href="#" onclick="console.log('link')">x</a></li>
+     </ul>
+   </div>
+  </section>
+  `;
+  rightNavigation.innerHTML = template;
+ }
 const createEditCourse = (id) =>{
     const {institution,name,year,division} = courses[id];
   
@@ -53,7 +76,7 @@ const createEditCourse = (id) =>{
   </div>
   </section>
   `;
-  root.innerHTML = template;
+  rightNavigation.innerHTML = template;
 }
 
 const teacherListCourses = () =>{
@@ -94,7 +117,7 @@ const teacherListCourses = () =>{
     </ul>
    </section>
   `;
-  root.innerHTML = template;
+  rightNavigation.innerHTML = template;
 }
 const createEditTask = () => {
   const template =
@@ -140,10 +163,11 @@ const createEditTask = () => {
   </section>
   `;
 
-  root.innerHTML = template;
+  rightNavigation.innerHTML = template;
 }
 
 const editTask = () => {
   
-  root.innerHTML = 'Edit Task';
+  rightNavigation.innerHTML = 'Edit Task';
 }
+

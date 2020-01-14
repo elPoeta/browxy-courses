@@ -1,0 +1,270 @@
+@media only screen and (max-width: 1500px)  {
+	.bxy_verticalDragBar {
+    right: 480px;
+  }
+  .bxy_sidecontent {
+	   width: 480px; 
+  }
+  .bxy_compiler {
+    right: 486px; 
+  }
+  .bxy_navigation-links__item {
+	  font-size: 1.1em;
+  }
+  .bxy_run-status {
+    width: 115px;
+    font-size: 1em;
+  }	
+  .bxy_button {
+    padding: 7px 10px 7px;
+    font-size: 1em;
+    min-width: 60px;
+  }
+  #args {
+    padding: 7px 10px 7px;
+    font-size: 1em;
+  }
+  #moreOptions {
+    font-size: 1.8em;
+  }
+  #exampleCombo {
+    width: 140px;
+    padding: 7px 10px 7px;
+    font-size: 1em;
+  }
+  .bxy_side-content-header {
+    height: 1.5em;
+  }
+  .bxy_side-content-header__text {
+    line-height: 1.1em;
+    font-size: 1.5em;
+  }
+  .homeSuperTitle {
+    font-size: 1.3em;
+    padding-top: .9em;
+    margin-bottom: .8em;
+  }
+  .homeDescription{
+    font-size: 1em;
+  }  
+  
+  .homeExampleOrderList {
+    max-width: 320px;
+    margin-left: 30px;
+  } 
+  .homeExampleOrderList .homeExampleList {
+    margin: 0.5rem 0.5rem;
+    font-size: 1em;
+  }
+  .homeExampleOrderList .homeExampleList::before {
+    font-size: 1rem;
+    --size: 25px;
+  }
+  .homeExampleList input[type="button"] {
+	  font-size: 1em;
+    padding: .3em;
+  }
+  .homeExampleList select {
+	  width: 110px;
+    padding: 0;
+    font-size: 1.1em;
+  }
+  .homeExampleList:nth-child(3) {	
+    margin-top: -0.5rem;
+    margin-bottom: 0rem;
+  }
+  .homeTitle {
+	  font-size: 1.2em;
+  }
+  .home-check-img{
+	  width: 20px;
+  }
+  #btnToMobile, 
+  #btnToOldBxy {
+	  height: 40px;
+	  margin-top: 1em;
+  }
+  .btnTitle{
+	  font-size: 1.1em;
+  }
+  .codeLibrary_searchField {
+    width: 180px;
+  }
+  .termsItem {
+    font-size: 1.3em;
+    line-height: 1.2em;
+    margin: 0 0 15px 15px;
+  }
+  .homeSuperTitle2 {
+     font-size: 1.2em; 
+  }
+  .simform__actions {
+    font-size: 1em;
+  }
+  .simform__actions .sumbit {
+    height: 35px;
+    font-size: 1.2em;
+    margin-top: 25px;
+  } 
+  
+  .userAreaContainerLinks {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 290px;
+    text-align: center;
+  }
+  .userAreaContainerLinks  li {
+    padding: 5px 0;
+  }
+  .editorConsoleTabber > ul > li > a {
+	  font-size: 1em;
+  }
+  .icon-dots {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (max-width: 1200px)  {
+  .bxy_verticalDragBar {
+    right: 340px;
+  }
+  .bxy_sidecontent {
+	   width: 340px; 
+  }
+  .bxy_compiler {
+    right: 346px; 
+  }
+  .bxy_horizontalDragBar {
+    bottom: 225px;
+  }
+  .bxy_compiler__console{
+    height: 225px;
+  }
+  #bxy_compiler__top_container { 
+    bottom: 230px;
+  }
+  .bxy_navigation-links__item {
+	  font-size: .9em;
+	  padding: 11px 3px;
+  }
+  .bxy_run-status {
+    width: 100px;
+    font-size: .9em;
+  }	
+  
+  .bxy_button {
+    padding: 5px 8px 5px;
+    font-size: .9em;
+    min-width: 55px;
+  }
+  #args {
+    padding: 5px 8px 5px;
+    font-size: .9em;
+  }
+  #moreOptions {
+    font-size: 1.5em;
+  }
+  #exampleCombo {
+    width: 125px;
+    padding: 5px 8px 5px;
+    font-size: .9em;
+  }
+  .bxy_side-content-header {
+    height: 1.3em;
+  }
+  .bxy_side-content-header__text {
+    line-height: 1em;
+    font-size: 1.3em;
+  }
+  
+  .homeSuperTitle {
+    font-size: 1.2em;
+    padding-top: .8em;
+    margin-bottom: .5em;
+  }
+  
+  .homeDescription{
+    font-size: .9em;
+  }  
+  
+  .homeExampleOrderList {
+    max-width: 320px;
+    margin-left: 30px;
+  } 
+  .homeExampleOrderList .homeExampleList {
+    margin: 0.5rem 0.5rem;
+    font-size: .8em;
+  }
+  .homeExampleOrderList .homeExampleList::before {
+    font-size: .7rem;
+    --size: 19px;
+  }
+  .homeExampleList input[type="button"] {
+	  font-size: .9em;
+    padding: .5em;
+  }
+  .homeExampleList select {
+	  width: 110px;
+    padding: 0;
+    font-size: 1.1em;
+  }
+  .homeExampleList:nth-child(3) {	
+    margin-top: -0.8rem;
+    margin-bottom: -0.2rem;
+  }
+  .homeTitle {
+	  font-size: 1.1em;
+  }
+  .home-check-img{
+	  width: 15px;
+  }
+  #btnToMobile, 
+  #btnToOldBxy {
+	  height: 22px;
+	  margin-top: .8em;
+  }
+  .mobileIcon {
+    font-size: .9em;
+  }
+  .btnTitle{
+	  font-size: .9em;
+  }
+  #btnToOldBxy .btnTitle{
+    font-size: 1.2em;
+  }
+  .codeLibrary_searchField {
+    width: 180px;
+  }
+  .termsItem {
+    font-size: 1em;
+    line-height: 15px;
+    margin: 0 0 15px 15px;
+  }
+  .homeSuperTitle2 {
+     font-size: 1.2em; 
+  }
+  .simform__actions {
+    font-size: .9em;
+  }
+  .simform__actions .sumbit {
+    height: 35px;
+    font-size: 1em;
+    margin-top: 25px;
+  }  
+  .userAreaContainerLinks {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 290px;
+    text-align: center;
+  }
+  .userAreaContainerLinks  li {
+    padding: 5px 0;
+  }
+  .editorConsoleTabber > ul > li > a {
+	  font-size: .9em;
+  }
+  .icon-dots {
+    font-size: 1.1em;
+  }
+}
