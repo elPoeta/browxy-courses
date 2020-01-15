@@ -282,7 +282,41 @@ const studentTaskDetail = () =>{
        <li>hello World</li>
        <li>Finished</li>
        <li>8</li>
-       <li><span class="action-course action-course-edit" onclick="">View Sumissions</span></li>      
+       <li><span class="action-course action-course-edit" onclick="studentTaskSumission();">View Sumissions</span></li>      
+       </ul>
+     </li> 
+    </ul>
+   </section>
+  `;
+  rightNavigation.innerHTML = template;
+  if(rightNavigation.offsetWidth > 600) {
+    document.querySelectorAll('.teacher-course-header li')
+    .forEach(el=> el.classList.remove('cut-text'))
+  }
+}
+
+const studentTaskSumission = () =>{
+  document.documentElement.style.setProperty("--colNum", 4);
+  const template =
+  `<h2>Course: ITFS 16 Dialog Logica 2020A</h2>
+  <h2>Student: Fulano de Tal</h2>
+  <h2>Task: unit: 1 - task#: 1 - taskName: HelloWorld</h2>
+   <section class="teacher-courses">
+    <ul>
+     <li> 
+       <ul class="teacher-course-cell teacher-course-header">
+       <li class="cut-text">Date Time/li>
+       <li class="cut-text">Status</li>
+       <li class="cut-text">Grade</li>
+       <li class="cut-text">Actions</li>    
+       </ul>
+     </li> 
+     <li> 
+       <ul class="teacher-course-cell teacher-course-row">
+       <li>${new Date().toISOString()}</li>
+       <li>Finished</li>
+       <li>8</li>
+       <li><span class="action-course action-course-edit" onclick="">View Details</span></li>      
        </ul>
      </li> 
     </ul>
