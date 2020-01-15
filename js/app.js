@@ -137,53 +137,70 @@ const teacherListCourses = () =>{
     .forEach(el=> el.classList.remove('cut-text'))
   }
 }
+let taskId =1;
 const createEditTask = () => {
+  let taskName = '';
   const template =
-  `<section class="container-form">
+  `<section class="container-form-task">
   <h2 class="brand"><span>Browxy</span> courses</h2>
-  <div class="wrapper-form">
-    <div class="side-info">
-      <h3>Task</h3>
-      <ul>
-      <li onclick="teacherListCourses();">My Courses</li>
-      <li onclick="createEditTask();">New Task</li>
-      </ul>
-     
-    </div>
-    <div class="course-form">
-      <h3>Create Task</h3>
-      <form>
-        <p>
-          <label>Name</label>
-          <input type="text" name="name" >
-        </p>
-        <p>
-        <label>Unit</label>
-        <input type="number" name="unit" >
-      </p>
-        <p>
-          <label>Task#</label>
-          <input type="number" name="task" >
-        </p>
-        <p>
-        <label>ProgramLink id</label>
-        <input type="number" name="programLink" >
-      </p>
-      <p>
-      <input type="text" name="hiddenTestCaseFile" hidden >
-    </p>
-        <p class="full">
-          <button>Add Task</button>
-        </p>
-      </form>
-    </div>
-  </div>
+  <p class="full">
+  <button onclick="newTaskForm(${taskId});">Add New Task</button>
+</p>
+   ${taskForm(0)}
+   <div id="container-form-task">
+   <div class="btn-task-conatiner">
+   <button id="submit-tasks">Submit tasks</button>
+   <button id="cancel-tasks">Cancel</button>
+   </div>
+   </div>
+
   </section>
   `;
 
   rightNavigation.innerHTML = template;
 }
 
+const taskForm = (taskId) => (
+  `<div id="form-${taskId}" class="wrapper-form-task">
+  <div class="side-info-task">
+    <h3 id="ntsk-${taskId}">Name task</h3>
+    <ul>
+    <li onclick="">up</li>
+    <li onclick="">down</li>
+    <li onclick="">trash</li>
+    </ul>
+   
+  </div>
+  <div class="course-form">
+    <h3>Create Task</h3>
+    <form>
+      <p>
+        <label>Name</label>
+        <input type="text" name="name" >
+      </p>
+      <p>
+      <label>Unit</label>
+      <input type="number" name="unit" >
+    </p>
+      <p>
+        <label>Task#</label>
+        <input type="number" name="task" >
+      </p>
+      <p>
+      <label>ProgramLink id</label>
+      <input type="number" name="programLink" >
+    </p>
+    <p>
+    <input type="text" name="hiddenTestCaseFile" hidden >
+  </p>
+    </form>
+  </div>
+</div>`);
+
+const newTaskForm = () => {
+  taskId++;
+ document.querySelector(`#container-form-task`).insertAdjacentHTML('afterbegin', taskForm(taskId));
+}
 const editTask = () => {
   
   rightNavigation.innerHTML = 'Edit Task';

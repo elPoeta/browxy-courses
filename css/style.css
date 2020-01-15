@@ -58,11 +58,18 @@ header nav ul li:hover {
   box-shadow: inset #333 0 -1px 4px 1px; 
  }
 /*FORMS*/
-.container-form{
+.container-form,
+.container-form-task{
   max-width:1170px;
   margin-left:auto;
   margin-right:auto;
   padding:1em;
+}
+
+.container-form-task {
+  height:100%;
+  overflow-y:scroll; 
+  margin-bottom:20px;
 }
 
 .brand{
@@ -73,32 +80,47 @@ header nav ul li:hover {
 .brand span{
   color:#08315a;
 }
-
-.wrapper-form{
+.wrapper-form,
+.wrapper-form-task {
   display: grid;
-  grid-template-columns: 1fr 2fr;
   box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
 }
+.wrapper-form{
+  grid-template-columns: 1fr 2fr;
+}
 
-.wrapper-form > *{
+.wrapper-form-task{
+  grid-template-columns: 25% 2fr;
+  margin: 10px;
+}
+
+.wrapper-form > *,
+.wrapper-form-task > *{
   padding: 2em;
 }
-.wrapper-form h3 {
+.wrapper-form h3,
+.wrapper-form-task h3 {
   color:#989797;
   margin-bottom: 5px;
 }
-.side-info{
+.side-info,
+.side-info-task{
   background:#c9e6ff;
 }
 .side-info h3,
 .brand{
   text-align: left;
+}
+.side-info h3,
+.side-info-task h3,
+.brand{
   color: #2b56ce;
 }
 .side-info ul {
   margin-top: 10px;
 }
-.side-info ul li {
+.side-info ul li,
+.side-info-task ul li {
   padding: 5px;
   text-decoration: underline;
   list-style: none;
@@ -108,6 +130,11 @@ header nav ul li:hover {
   color:#1ab13b;
   transition: background-color 2s ease-out;
 }
+
+.side-info-task h3 {
+  text-align: center;
+}
+
 .course-form{
   background:#f9feff;
 }
@@ -159,14 +186,14 @@ header nav ul li:hover {
   width: 100%;
 }
 
-.course-form form button:hover,
-.course-form form button:focus{
+.course-form form button:hover {
   background:#1ab13b;
   color:#fff;
   outline:0;
   cursor: pointer;
   transition: background-color 2s ease-out;
 }
+
 
 /*TEACHE COURSE TABLE*/
 .header-courses{
