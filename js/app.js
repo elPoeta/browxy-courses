@@ -68,6 +68,7 @@ const createEditCourse = (id) =>{
         <p>
         <label>Active Course</label>
         <input type="checkbox" name="status" ${status ? 'checked' : 'unchecked'}>
+        <div class="status ${status ? 'status-active' : 'status-deactive'}"></div>
       </p>
         <p class="full">
           <label>Description</label>
@@ -305,7 +306,7 @@ const studentTaskSumission = () =>{
     <ul>
      <li> 
        <ul class="teacher-course-cell teacher-course-header">
-       <li class="cut-text">Date Time/li>
+       <li class="cut-text">Date Time</li>
        <li class="cut-text">Status</li>
        <li class="cut-text">Grade</li>
        <li class="cut-text">Actions</li>    
@@ -314,9 +315,17 @@ const studentTaskSumission = () =>{
      <li> 
        <ul class="teacher-course-cell teacher-course-row">
        <li>${new Date().toISOString()}</li>
-       <li>Finished</li>
+       <li><div class="status status-active"></div> Approved</li>
        <li>8</li>
-       <li><span class="action-course action-course-edit" onclick="">View Details</span></li>      
+       <li><span class="action-course action-course-edit" onclick="taskSumissionDetail();">View Details</span></li>      
+       </ul>
+     </li> 
+     <li> 
+       <ul class="teacher-course-cell teacher-course-row">
+       <li>${new Date().toISOString()}</li>
+       <li><div class="status status-active"></div> Approved</li>
+       <li>6</li>
+       <li><span class="action-course action-course-edit" onclick="taskSumissionDetail();">View Details</span></li>      
        </ul>
      </li> 
     </ul>
@@ -327,4 +336,42 @@ const studentTaskSumission = () =>{
     document.querySelectorAll('.teacher-course-header li')
     .forEach(el=> el.classList.remove('cut-text'))
   }
+}
+
+const taskSumissionDetail = () =>{
+  const template =
+  `<h2>Course: ITFS 16 Dialog Logica 2020A</h2>
+  <h2>Student: Fulano de Tal</h2>
+  <h2>Task: unit: 1 - task#: 1 - taskName: HelloWorld</h2>
+  <h2>Sumission: ${new Date().toISOString()}</h2>
+  <section>
+   <article class="code">
+   <h4>Code</h4>
+   <pre><code>
+     package testpackage;
+    
+     public class HelloWorld {
+  
+       public static void main(String[] args) {
+           System.out.println("hello world!");
+       }
+   
+     }
+     </code>
+   </pre>
+   </article>
+   <article class="results">
+    <h4>Test Results:</h4>
+    <ul>
+      <li>Test that can recive arguments: <span style="color:green;">OK</span></li>
+      <li>Test check no arguments: <span style="color:green;">OK</span></li>
+    </ul>
+   </article>
+   <article class="style-results">
+   style-results
+   </article>
+  </section>
+  `;
+
+  rightNavigation.innerHTML = template;
 }
