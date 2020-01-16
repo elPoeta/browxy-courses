@@ -24,7 +24,7 @@ const userArea = ()=> {
      <div style='padding:20px;'>
      <h3>STUDENT LINKS</h3>
      <ul style='list-style:none; padding:2px;'>
-       <li><a href="#" onclick="console.log('link')">x</a></li>
+       <li><a href="#" onclick="studentRegisterCourse();">Register Courses Form</a></li>
      </ul>
    </div>
   </section>
