@@ -277,7 +277,7 @@ header nav ul li:hover {
   transform: translate3d(0, 0, 0);
   cursor: pointer;
 }
-/*
+
 pre {
   width: 95%;
   padding: 0;
@@ -288,7 +288,8 @@ pre {
 	background: #efefef;
 	border: 1px solid #777;
 
-}*/
+}
+/*
 pre { 
   width: 95%;
   margin: 0 auto; 
@@ -302,10 +303,10 @@ pre {
   border-bottom: 1px solid #555;
 	box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset, 0 0 20px rgba(0,0,0,0.2) inset;
 	font: 16px/18px 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
-	}
+	} */
 pre code {
 	padding: 10px;
-	color: #fff;
+	color: #222;
 }
 @keyframes shake {
   10%, 90% {
