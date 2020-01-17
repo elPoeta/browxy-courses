@@ -16,31 +16,6 @@ body {
   font-size: 1em;
 }
 
-header {
-  height: 60px;
-  background-color: #09236b;
-  color: #fff;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
-
-header nav {
-  display: flex;
-  justify-content: flex-end;
-}
-
-header nav ul li {
-  list-style: none;
-  padding: 3px;
-  cursor: pointer;
-  display: inline-block;
-}
-
-header nav ul li:hover {
-   background-color: #fff;
-   color: #09236b;
-} 
 /*STATUS LED */
 .status {
   display: inline-block;

@@ -76,7 +76,7 @@ const createEditCourse = (id) =>{
           <textarea name="description" rows="5"></textarea>
         </p>
         <p class="full">
-          <button>Create Course</button>
+          <button>Save Course</button>
         </p>
       </form>
     </div>
