@@ -18,6 +18,7 @@ const userArea = ()=> {
        <ul style='list-style:none; padding:2px;'>
          <li><a href="#" onclick="createEditCourse(0);">Create course</a></li>
          <li><a href="#" onclick="teacherListCourses();">My Courses</a></li>
+         <li><a href="#" onclick="editStudent();">Edit Student Form</a></li>
        </ul>
      </div>
 
@@ -375,4 +376,79 @@ const taskSumissionDetail = () =>{
   `;
 
   rightNavigation.innerHTML = template;
+}
+
+const editStudent = () =>{
+  const template =
+  ` <section class="container-form">
+  <h1 class="brand"><span>Browxy</span> courses</h1>
+  <div class="wrapper-form">
+    <div class="side-info-register">
+    <h3>Edit Student</h3>
+    </div>
+    <div class="course-form register-form">
+      <h3>Edit</h3>
+      <form>
+        <p>
+          <label>Email Address</label>
+          <input type="email" name="email" value="browxy@gmail.com" >
+        </p>
+        <p>
+        <label>Birthday</label>
+        <input type="date" name="birthday">
+        </p>
+        <p>
+        <label>First Name</label>
+        <input type="text" name="firstName">
+      </p>
+      <p>
+      <label>Last Name</label>
+      <input type="text" name="lastName">
+      </p>
+       <fieldset class="full">
+            <legend>Gender:</legend>
+            <p class="register-radio">           
+            <input type="radio"
+                 name="gender"
+                 id="male"
+                 value="male" />
+            <label for="male">Male</label>
+             <input type="radio"
+                 name="gender"
+                 id="female"
+                 value="female" />
+            <label for="female">Female</label>
+            </p>
+           </fieldset>     
+        <fieldset class="full">
+        <legend>Know programming before:</legend>
+        <p class="register-radio">           
+        <input type="radio"
+             name="knowPrg"
+             id="yes"
+             value="yes" />
+        <label for="yes">Yes</label>
+         <input type="radio"
+             name="knowPrg"
+             id="no"
+             value="no" />
+        <label for="no">No</label>
+        </p>
+       </fieldset>
+        <p class="full">
+          <label>Student Notes</label>
+          <textarea name="message" rows="5"></textarea>
+        </p>
+        <p class="full">
+          <label>Teacher Notes</label>
+          <textarea name="message" rows="5"></textarea>
+        </p>
+        <p class="full">
+          <button>Save</button>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>`; 
+rightNavigation.innerHTML = template;
 }

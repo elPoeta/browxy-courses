@@ -15,7 +15,7 @@ const studentRegisterCourse = () =>{
       <form>
         <p>
           <label>Email Address</label>
-          <input type="email" name="email" value="browxy@gmail.com" disabled>
+          <input type="email" name="email" value="browxy@gmail.com" disabled class="disabled-input">
         </p>
         <p class="not-your-email">
          not your email? <span class="login-register-other">login</span> or <span class="login-register-other">register</span> with other.
@@ -28,7 +28,7 @@ const studentRegisterCourse = () =>{
       <label>Last Name</label>
       <input type="text" name="lastName">
       </p>
-       <fieldset>
+       <fieldset class="full">
             <legend>Gender:</legend>
             <p class="register-radio">           
             <input type="radio"
@@ -47,7 +47,7 @@ const studentRegisterCourse = () =>{
           <label>Birthday</label>
           <input type="date" name="birthday">
         </p>
-        <fieldset>
+        <fieldset class="full">
         <legend>Know programming before:</legend>
         <p class="register-radio">           
         <input type="radio"
@@ -67,7 +67,7 @@ const studentRegisterCourse = () =>{
           <textarea name="message" rows="5"></textarea>
         </p>
         <p class="full">
-          <button>Submit</button>
+          <button>Register</button>
         </p>
       </form>
     </div>
@@ -97,14 +97,14 @@ const studentMyCourses = () =>{
      </li> 
      <li> 
        <ul class="teacher-course-cell teacher-course-row">
-       <li class="link-to-status" onclick="">ITFS 16 Dialog Logica 2020A</li>
+       <li class="link-to-status" onclick="studentCourseTask();">ITFS 16 Dialog Logica 2020A</li>
        <li><div class="status status-active"></div> Active</li>
        <li><span class="action-course action-course-delete">un-enroll<span></li>      
        </ul>
      </li> 
      <li> 
        <ul class="teacher-course-cell teacher-course-row">
-       <li class="link-to-status" onclick="">ITFS 16 Data Base 2020A</li>
+       <li class="link-to-status" onclick="studentCourseTask();">ITFS 16 Data Base 2020A</li>
        <li><div class="status status-active"></div> Active</li>
        <li><span class="action-course action-course-delete">un-enroll<span></li>  
        </ul>
@@ -117,4 +117,123 @@ const studentMyCourses = () =>{
     document.querySelectorAll('.teacher-course-header li')
     .forEach(el=> el.classList.remove('cut-text'))
   }
+}
+
+const studentCourseTask = () =>{
+  document.documentElement.style.setProperty("--colNum", 6);
+  const template =
+  `<div class="header-courses">
+  <h2>Course: ITFS 16 Dialog Logica 2020A</h2>
+  <button class="btn-newCourse" onclick="">View All Student Status</button>
+  </div>
+   <section class="teacher-courses">
+    <ul>
+     <li> 
+       <ul class="teacher-course-cell teacher-course-header">
+       <li class="cut-text">Unit Id</li>
+       <li class="cut-text">Task Id</li>
+       <li class="cut-text">Task Name</li>
+       <li class="cut-text">Last Status</li>
+       <li class="cut-text">Last Grade</li>
+       <li class="cut-text">Actions</li>    
+       </ul>
+     </li> 
+     <li> 
+       <ul class="teacher-course-cell teacher-course-row">
+       <li>1</li>
+       <li>1</li>
+       <li>hello World</li>
+       <li>Finished</li>
+       <li>8</li>
+       <li><span class="action-course action-course-edit" onclick="studentTaskSumissionForStudent();">View Sumissions</span> - <span class="action-course action-course-edit" onclick="">Open Code</span></li>      
+       </ul>
+     </li> 
+    </ul>
+   </section>
+  `;
+  rightNavigation.innerHTML = template;
+  if(rightNavigation.offsetWidth > 600) {
+    document.querySelectorAll('.teacher-course-header li')
+    .forEach(el=> el.classList.remove('cut-text'))
+  }
+}
+
+const studentTaskSumissionForStudent = () =>{
+  document.documentElement.style.setProperty("--colNum", 4);
+  const template =
+  `<h2>Course: ITFS 16 Dialog Logica 2020A - Student view</h2>
+  <h2>Student: Fulano de Tal</h2>
+  <h2>Task: unit: 1 - task#: 1 - taskName: HelloWorld</h2>
+   <section class="teacher-courses">
+    <ul>
+     <li> 
+       <ul class="teacher-course-cell teacher-course-header">
+       <li class="cut-text">Date Time</li>
+       <li class="cut-text">Status</li>
+       <li class="cut-text">Grade</li>
+       <li class="cut-text">Actions</li>    
+       </ul>
+     </li> 
+     <li> 
+       <ul class="teacher-course-cell teacher-course-row">
+       <li>${new Date().toISOString()}</li>
+       <li><div class="status status-active"></div> Approved</li>
+       <li>8</li>
+       <li><span class="action-course action-course-edit" onclick="studentTaskSumissionDetail();">View Details</span></li>      
+       </ul>
+     </li> 
+     <li> 
+       <ul class="teacher-course-cell teacher-course-row">
+       <li>${new Date().toISOString()}</li>
+       <li><div class="status status-active"></div> Approved</li>
+       <li>6</li>
+       <li><span class="action-course action-course-edit" onclick="studentTaskSumissionDetail();">View Details</span></li>      
+       </ul>
+     </li> 
+    </ul>
+   </section>
+  `;
+  rightNavigation.innerHTML = template;
+  if(rightNavigation.offsetWidth > 600) {
+    document.querySelectorAll('.teacher-course-header li')
+    .forEach(el=> el.classList.remove('cut-text'))
+  }
+}
+
+const studentTaskSumissionDetail = () =>{
+  const template =
+  `<h2>Course: ITFS 16 Dialog Logica 2020A Student View</h2>
+  <h2>Student: Fulano de Tal</h2>
+  <h2>Task: unit: 1 - task#: 1 - taskName: HelloWorld</h2>
+  <h2>Sumission: ${new Date().toISOString()}</h2>
+  <section>
+   <article class="code">
+   <h4>Code</h4>
+   <pre><code>
+     package testpackage;
+    
+     public class HelloWorld {
+  
+       public static void main(String[] args) {
+           System.out.println("hello world!");
+       }
+   
+     }
+     </code>
+   </pre>
+   </article>
+   <article class="results">
+    <h4>Test Results:</h4>
+    <ul>
+      <li>Test that can recive arguments: <span style="color:green;">OK</span></li>
+      <li>Test check no arguments: <span style="color:green;">OK</span></li>
+    </ul>
+   </article>
+   <article class="style-results">
+   style-results
+   </article>
+  </section>
+  `;
+
+  rightNavigation.innerHTML = template;
 }

@@ -215,7 +215,7 @@ header nav ul li:hover {
 .course-form form input {
   font-size: .8em;
 }
-.course-form.register-form > form > p:nth-child(1) > input[type=email]{ 
+.disabled-input{ 
   background-color: #f9feff
 }
 .not-your-email {
