@@ -75,3 +75,46 @@ const studentRegisterCourse = () =>{
 </section>`; 
 rightNavigation.innerHTML = template;
 }
+
+const studentMyCourses = () =>{
+  const cssVarColNum = 3
+  document.documentElement.style.setProperty("--colNum", cssVarColNum);
+  const template =
+  `
+  <div class="header-courses">
+  <h2>My Courses</h2>
+  
+  </div>
+  
+   <section class="teacher-courses">
+    <ul>
+     <li> 
+       <ul class="teacher-course-cell teacher-course-header">
+       <li class="cut-text">Name</li>
+       <li class="cut-text">Status</li>
+       <li class="cut-text">Actions</li>    
+       </ul>
+     </li> 
+     <li> 
+       <ul class="teacher-course-cell teacher-course-row">
+       <li class="link-to-status" onclick="">ITFS 16 Dialog Logica 2020A</li>
+       <li><div class="status status-active"></div> Active</li>
+       <li><span class="action-course action-course-delete">un-enroll<span></li>      
+       </ul>
+     </li> 
+     <li> 
+       <ul class="teacher-course-cell teacher-course-row">
+       <li class="link-to-status" onclick="">ITFS 16 Data Base 2020A</li>
+       <li><div class="status status-active"></div> Active</li>
+       <li><span class="action-course action-course-delete">un-enroll<span></li>  
+       </ul>
+     </li> 
+    </ul>
+   </section>
+  `;
+  rightNavigation.innerHTML = template;
+  if(rightNavigation.offsetWidth > 600 || cssVarColNum >=3) {
+    document.querySelectorAll('.teacher-course-header li')
+    .forEach(el=> el.classList.remove('cut-text'))
+  }
+}
