@@ -124,7 +124,7 @@ const studentCourseTask = () =>{
   const template =
   `<div class="header-courses">
   <h2>Course: ITFS 16 Dialog Logica 2020A</h2>
-  <button class="btn-newCourse" onclick="">View All Student Status</button>
+  <button class="btn-newCourse" onclick="viewAllStudentsStatus();">View All Student Status</button>
   </div>
    <section class="teacher-courses">
     <ul>
@@ -236,4 +236,57 @@ const studentTaskSumissionDetail = () =>{
   `;
 
   rightNavigation.innerHTML = template;
+}
+
+const viewAllStudentsStatus = () =>{
+  const cssVarColNum = 3;
+  document.documentElement.style.setProperty("--colNum", cssVarColNum); 
+  document.documentElement.style.setProperty("--colTask", 8);
+
+  const template =
+  `<section class="student-status-courses">
+    <h2>Course: ITFS 16 Dialog Logica 2020A</h2>
+  <ul>
+   <li> 
+     <ul class="teacher-course-cell teacher-course-header">
+     <li class="cut-text">Student Name</li>
+     <li class="status-task">
+       <ul class="status-task-list">
+       <li class="cut-text">1.1</li>
+       <li class="cut-text">1.2</li>
+       <li class="cut-text">1.3</li>
+       <li class="cut-text">2.1</li>
+       <li class="cut-text">2.2</li>
+       <li class="cut-text">3.1</li>
+       <li class="cut-text">3.2</li>
+       <li class="cut-text">3.3</li>
+       </ul>
+     </li>
+     <li class="cut-text">Final Grade</li>    
+     </ul>
+   </li> 
+   <li> 
+       <ul class="teacher-course-cell teacher-course-row">
+       <li>Fulano de Tal</li>
+       <li class="status-task">
+       
+        <ul class="status-task-list">
+        <li class="cut-text" style="color: green;">7</li>
+        <li class="cut-text" style="color: green;">8</li>
+        <li class="cut-text" style="color: red;">3</li>
+        <li class="cut-text" style="color: red;">6</li>
+        <li class="cut-text" style="color: green;">10</li>
+        </ul>
+       </li>
+       <li>8</li>
+       </ul>
+      </li>
+     </ul>  
+      </section> `;
+
+      rightNavigation.innerHTML = template;
+      if(rightNavigation.offsetWidth > 600 ) {
+        document.querySelectorAll('.teacher-course-header li')
+        .forEach(el=> el.classList.remove('cut-text'))
+      }
 }
