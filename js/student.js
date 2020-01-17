@@ -15,22 +15,20 @@ const studentRegisterCourse = () =>{
       <form>
         <p>
           <label>Email Address</label>
-          <input type="email" name="email">
+          <input type="email" name="email" value="browxy@gmail.com" disabled>
+        </p>
+        <p class="not-your-email">
+         not your email? <span class="login-register-other">login</span> or <span class="login-register-other">register</span> with other.
         </p>
         <p>
-          <label>Alias</label>
-          <input type="text" name="alias">
-        </p>
-        <p>
-        <label>Password</label>
-        <input type="password" name="password">
+        <label>First Name</label>
+        <input type="text" name="firstName">
       </p>
       <p>
-      <label>Confirm Password</label>
-      <input type="password" name="confirmPassword">
-    </p>
-   
-          <fieldset>
+      <label>Last Name</label>
+      <input type="text" name="lastName">
+      </p>
+       <fieldset>
             <legend>Gender:</legend>
             <p class="register-radio">           
             <input type="radio"
@@ -64,10 +62,6 @@ const studentRegisterCourse = () =>{
         <label for="no">No</label>
         </p>
        </fieldset>
-       <p>
-       <label>Captcha</label>
-       <input type="text" name="captcha">
-     </p>
         <p class="full">
           <label>Notes</label>
           <textarea name="message" rows="5"></textarea>

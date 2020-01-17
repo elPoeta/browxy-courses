@@ -212,7 +212,26 @@ header nav ul li:hover {
   cursor: pointer;
   transition: background-color 2s ease-out;
 }
+.course-form form input {
+  font-size: .8em;
+}
+.course-form.register-form > form > p:nth-child(1) > input[type=email]{ 
+  background-color: #f9feff
+}
+.not-your-email {
+  align-self: center;
+  color: #333;
+}
 
+.login-register-other {
+  text-decoration: underline;
+  color: darkblue;
+  cursor: pointer;
+}
+
+.login-register-other:hover{
+  color: green;
+}
 
 /*TEACHE COURSE TABLE*/
 .header-courses{
