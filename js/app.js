@@ -18,7 +18,6 @@ const userArea = ()=> {
        <ul style='list-style:none; padding:2px;'>
          <li><a href="#" onclick="createEditCourse(0);">Create course</a></li>
          <li><a href="#" onclick="teacherListCourses();">My Courses</a></li>
-         <li><a href="#" onclick="editStudent();">Edit Student Form</a></li>
        </ul>
      </div>
 
@@ -248,7 +247,7 @@ const studentStatusForCourse = () =>{
         </ul>
        </li>
        <li>8</li>
-       <li><span class="action-course action-course-edit" >Edit</span> - <span class="action-course action-course-edit" onclick="studentTaskDetail();">tasks</span> -  <span class="action-course action-course-delete">Delete</span></li>      
+       <li><span class="action-course action-course-edit" onclick="editStudent();">Edit</span> - <span class="action-course action-course-edit" onclick="studentTaskDetail();">tasks</span> -  <span class="action-course action-course-delete">Delete</span></li>      
        </ul>
       </li>
      </ul>  
@@ -391,19 +390,19 @@ const editStudent = () =>{
       <form>
         <p>
           <label>Email Address</label>
-          <input type="email" name="email" value="browxy@gmail.com" >
+          <input type="email" name="email" value="fulano@gmail.com" >
         </p>
         <p>
         <label>Birthday</label>
-        <input type="date" name="birthday">
+        <input type="date" name="birthday" value="1999-07-22">
         </p>
         <p>
         <label>First Name</label>
-        <input type="text" name="firstName">
+        <input type="text" name="firstName" value="Fulano">
       </p>
       <p>
       <label>Last Name</label>
-      <input type="text" name="lastName">
+      <input type="text" name="lastName" value="de Tal">
       </p>
        <fieldset class="full">
             <legend>Gender:</legend>
@@ -411,7 +410,8 @@ const editStudent = () =>{
             <input type="radio"
                  name="gender"
                  id="male"
-                 value="male" />
+                 value="male" 
+                 checked="checked"/>
             <label for="male">Male</label>
              <input type="radio"
                  name="gender"
@@ -431,13 +431,14 @@ const editStudent = () =>{
          <input type="radio"
              name="knowPrg"
              id="no"
-             value="no" />
+             value="no" 
+             checked="checked"/>
         <label for="no">No</label>
         </p>
        </fieldset>
         <p class="full">
           <label>Student Notes</label>
-          <textarea name="message" rows="5"></textarea>
+          <textarea name="message" rows="5">Awesome!! course...</textarea>
         </p>
         <p class="full">
           <label>Teacher Notes</label>
